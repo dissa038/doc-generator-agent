@@ -18,5 +18,8 @@ export default defineSchema({
     chatId: v.id("chats"),
     html: v.string(),
     version: v.number(),
-  }).index("by_chat", ["chatId"]),
+    shareToken: v.optional(v.string()),
+  })
+    .index("by_chat", ["chatId"])
+    .index("by_share_token", ["shareToken"]),
 });
